@@ -6,16 +6,45 @@
 
 header {
     background-color: #164467;
-    margin: 0%;
+    margin-top: 20px
+    margin-bottom: 20px;
 }
+
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+#nav-left {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-logo {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 nav button {
     background-color: transparent;
     border: none;
-    padding: 5%;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+main { 
+    margin: 30px;
+}
+
+
+#hero-card {
+    background-image: "images/hero-bg.png";
+    height: 10%;
 }

@@ -9,18 +9,25 @@
 <body>
 <header>
     <nav>
-        <button id="menu">
-            <img src="icons/hamburger.svg" alt="Menu">
-        </button>
-        <button id="search">
-            <img src="icons/search.svg" alt="Search">
-        </button>
-        <a href="index.html">
+        <div id="nav-left">
+            <button id="menu">
+                <img src="icons/hamburger.svg" alt="Menu">
+            </button>
+            <button id="search">
+                <img src="icons/search.svg" alt="Search">
+            </button>
+         </div>
+        <a href="index.html" id="nav-logo">
             <img src="brand/submark.svg" alt="American Vintage Clothing Co. Logo">
         </a>
-        <button id="bag">
-            <img src="icons/bag.svg" alt="Shopping Bag">
-        </button>
+        <div id="nav-right">
+            <button id="fav">
+                <img src="icons/fav.svg" alt="Favourites">
+            </button>
+            <button id="bag">
+                <img src="icons/bag.svg" alt="Shopping Bag">
+            </button>
+        </div>
     </nav>
 </header>
 <main>
@@ -31,7 +38,6 @@
             </div>
         </a>
     </section>
-
     <section id="products">
          <a href="tees.html" class="product-card">
             <div class="card-content">
@@ -44,13 +50,11 @@
             </div>
         </a>
     </section>
-
     <section id="map">
         <h1>Visit us</h1>
         <p>Check out the full collections!</p>
         <p>133 Brunswick Street, Fitzroy 3065</p>
     </section>
-    
     <section id="hours">
         <h1>Opening Hours</h1>
         <p>Mon and Tues - Closed</p>
