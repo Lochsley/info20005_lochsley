@@ -6,10 +6,7 @@
 
 header {
     background-color: #164467;
-    margin-top: 20px
-    margin-bottom: 20px;
 }
-
 
 nav {
     display: flex;
@@ -40,11 +37,17 @@ nav button {
 }
 
 main { 
-    margin: 30px;
+
 }
 
+.hero-card {
+    display: block;
+    background-color: red;
+    height: 40vh;
+}
 
-#hero-card {
-    background-image: "images/hero-bg.png";
-    height: 10%;
+.product-card {
+    display: block;
+    background-color: yellow;
+    height: 20vh;
 }
