@@ -1,3 +1,10 @@
+:root {
+    --navy: #164467;
+    --maroon: #913B3B; 
+    --font-heading: "Holtwood One SC", serif, "Rockwell";
+    --font-body: "Afacad", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +12,15 @@
 }
 
 header {
-    background-color: #164467;
+    background-color: var(--navy);
+    position: fixed;
+    top: 0;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
+    width: 100vw;
 }
 
 #nav-left {
@@ -37,7 +47,8 @@ nav button {
 }
 
 main { 
-
+    margin-top: 125px;
+    font-family: sans-serif;
 }
 
 .hero-card {
@@ -46,8 +57,51 @@ main {
     height: 40vh;
 }
 
-.product-card {
+.sub-card {
     display: block;
     background-color: yellow;
     height: 20vh;
+}
+
+h1 { 
+    color: var(--maroon);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1em;
+}
+
+section {
+    margin: 20px;
+}
+
+#hero {
+    margin:0;
+}
+
+#products {
+    margin:0;
+}
+
+.product-card {
+    display: block;
+    width: 40vw;
+    height: 20vh;
+    background-color: blue;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#breadcrumb {
+    margin-top: 40px;
 }
