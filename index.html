@@ -9,27 +9,54 @@
 <body>
 <header>
     <nav>
-        <img src="icons/hamburger.svg" alt="Menu">
-        <img src="icons/search.svg" alt="Search">
-        <img src="brand/submark.svg" alt="American Vintage Clothing Co. Logo">
-        <img src="icons/bag.svg" alt="Shopping Bag">
+        <button id="menu">
+            <img src="icons/hamburger.svg" alt="Menu">
+        </button>
+        <button id="search">
+            <img src="icons/search.svg" alt="Search">
+        </button>
+        <a href="index.html">
+            <img src="brand/submark.svg" alt="American Vintage Clothing Co. Logo">
+        </a>
+        <button id="bag">
+            <img src="icons/bag.svg" alt="Shopping Bag">
+        </button>
     </nav>
 </header>
 <main>
-    <section id="new">
-        <h2>New In</h2>
-        <p>Placeholder text</p>
+    <section id="hero">
+        <a href="new.html" class="hero-card">
+            <div class="card-content">
+                <span>New In</span>
+            </div>
+        </a>
     </section>
 
-    <section id="shop">
-        <h2>Shop</h2>
-        <ul>
-            <li>Tees</li>
-            <li>Denim Jackets</li>
-            <li>Cowboy Boots</li>
-            <li>Overalls</li>
-            <li>Dresses</li>
-        </ul>
+    <section id="products">
+         <a href="tees.html" class="product-card">
+            <div class="card-content">
+                <span>Tees</span>
+            </div>
+        </a>
+         <a href="tees.html" class="product-card">
+            <div class="card-content">
+                <span>Tees</span>
+            </div>
+        </a>
+    </section>
+
+    <section id="map">
+        <h1>Visit us</h1>
+        <p>Check out the full collections!</p>
+        <p>133 Brunswick Street, Fitzroy 3065</p>
+    </section>
+    
+    <section id="hours">
+        <h1>Opening Hours</h1>
+        <p>Mon and Tues - Closed</p>
+        <p>Wed to Fri - 11am to 4pm</p>
+        <p>Sat - 11am to 4:30pm</p>
+        <p>Sun - 12pm to 4pm</p>
     </section>
 </main>
 </body>

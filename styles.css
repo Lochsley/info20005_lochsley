@@ -14,4 +14,8 @@ nav {
     justify-content: space-around;
 }
 
-.id "new"
+nav button {
+    background-color: transparent;
+    border: none;
+    padding: 5%;
+}
