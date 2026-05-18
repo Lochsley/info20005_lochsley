@@ -1,6 +1,11 @@
 :root {
-    --navy: #164467;
-    --maroon: #913B3B; 
+    --dark-blue: #164467;
+    --mid-blue: #4573A4;
+    --light-blue: #89A3BE;
+    --dark-red: #913B3B; 
+    --mid-red: #D96666;
+    --paper: #FFFBF4;
+    --charcoal: #2F2F2F;
     --font-heading: "Holtwood One SC", serif, "Rockwell";
     --font-body: "Afacad", sans-serif;
 }
@@ -12,7 +17,7 @@
 }
 
 header {
-    background-color: var(--navy);
+    background-color: var(--dark-blue);
     position: fixed;
     top: 0;
 }
@@ -53,18 +58,38 @@ main {
 
 .hero-card {
     display: block;
-    background-color: red;
+    background-color: var(--dark-blue);
     height: 40vh;
+    background-image: url('images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .sub-card {
     display: block;
-    background-color: yellow;
+    background-color: var(--dark-blue);
     height: 20vh;
 }
 
+.index-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+}
+
+.card-button {
+    background-color: var(--dark-red);
+    font-family: var(--font-heading);
+    color: var(--paper);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
 h1 { 
-    color: var(--maroon);
+    color: var(--dark-red);
     font-family: var(--font-heading);
     font-weight: 400;
     font-style: normal;
@@ -84,16 +109,29 @@ section {
     margin:0;
 }
 
-#products {
-    margin:0;
+#product-list { 
+    margin: 0;
+    display: flex;
+    gap: 20px;
 }
-
 .product-card {
     display: block;
     width: 40vw;
-    height: 20vh;
-    background-color: blue;
-    padding: 20px;
+    color: var(--charcoal)
+}
+
+.product-details {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#sub-cards {
+    margin: 0;
+}
+
+.sub-card {
+    margin: 0;
 }
 
 img {
@@ -102,6 +140,14 @@ img {
     display: block;
 }
 
+.card-content img {
+    padding: 10px;
+    background-color: var(--light-blue);
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
 #breadcrumb {
-    margin-top: 40px;
+    margin-top: 20px;
 }
