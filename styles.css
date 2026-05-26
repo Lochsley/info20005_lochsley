@@ -2,8 +2,9 @@
     --dark-blue: #164467;
     --mid-blue: #4573A4;
     --light-blue: #89A3BE;
-    --dark-red: #913B3B; 
-    --mid-red: #D96666;
+    --dark-red: #611B1B;
+    --mid-red: #913B3B; 
+    --light-red: #D96666;
     --paper: #FFFBF4;
     --charcoal: #2F2F2F;
     --font-heading: "Holtwood One SC", serif, "Rockwell";
@@ -14,6 +15,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+main {
+    background-color: var(--paper);
+}
+
+a {
+    text-decoration: none;
 }
 
 header {
@@ -80,19 +90,20 @@ main {
     padding: 20px;
 }
 
-.card-button {
-    background-color: var(--dark-red);
-    font-family: var(--font-heading);
-    color: var(--paper);
-    padding: 10px 20px;
-    border-radius: 10px;
-}
-
 h1 { 
-    color: var(--dark-red);
+    color: var(--mid-red);
     font-family: var(--font-heading);
     font-weight: 400;
     font-style: normal;
+}
+
+h2 {
+    font-size: 24pt;
+    font-weight: 600;
+}
+
+#prod-name {
+    font-weight: 100;
 }
 
 p {
@@ -126,6 +137,10 @@ section {
     margin-top: 10px;
 }
 
+.product {
+    margin: 0;
+}
+
 #sub-cards {
     margin: 0;
 }
@@ -150,4 +165,47 @@ img {
 
 #breadcrumb {
     margin-top: 20px;
+}
+
+#breadcrumb a {
+    font-style: italic;
+}
+
+/* Button and pseduo-button styles */
+
+.card-btn {
+    background-color: var(--mid-red);
+    font-family: var(--font-heading);
+    color: var(--paper);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px var(--dark-red);
+}
+
+.bag-btn {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--mid-red);
+    box-shadow: 0 10px var(--dark-red);
+    width: 100%;
+    border: none;
+    color: var(--paper);
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.bag-btn: { 
+
+}
+
+.btn-price {
+   font-weight: 100;
+}
+
+.btn-text{
+    font-weight: 600;
 }
