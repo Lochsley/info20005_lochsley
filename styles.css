@@ -122,12 +122,12 @@ section {
 
 #product-list { 
     margin: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 .product-card {
     display: block;
-    width: 40vw;
     color: var(--charcoal)
 }
 
@@ -208,4 +208,11 @@ img {
 
 .btn-text{
     font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+
+ #product-list { 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
 }
