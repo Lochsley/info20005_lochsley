@@ -59,15 +59,16 @@ nav button {
     margin-right: 10px;
 }
 
+/* Man + sections */
+
 
 main {
     background-color: var(--paper);
 }
 
-a {
-    text-decoration: none;
+section {
+    margin: 20px;
 }
-
 
 
 
@@ -124,6 +125,10 @@ a {
 
 /* Fonts and styles */
 
+a {
+    text-decoration: none;
+}
+
 h1 { 
     color: var(--mid-red);
     font-family: var(--font-heading);
@@ -146,13 +151,10 @@ p {
     font-size: 1em;
 }
 
-section {
-    margin: 20px;
-}
 
 
 
-/* Product list cards  */
+/* Product list + product cards  */
 
 #product-list { 
     margin: 0;
