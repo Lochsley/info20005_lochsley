@@ -1,3 +1,5 @@
+/* Variables for colours, fonts etc. */
+
 :root {
     --dark-blue: #164467;
     --mid-blue: #4573A4;
@@ -10,6 +12,7 @@
     --font-heading: "Holtwood One SC", serif, "Rockwell";
     --font-body: "Afacad", sans-serif;
 }
+/* Global formatting */
 
 * {
     margin: 0;
@@ -18,13 +21,7 @@
     font-family: var(--font-body);
 }
 
-main {
-    background-color: var(--paper);
-}
-
-a {
-    text-decoration: none;
-}
+/* Header + nav */
 
 header {
     background-color: var(--dark-blue);
@@ -62,6 +59,18 @@ nav button {
     margin-right: 10px;
 }
 
+
+main {
+    background-color: var(--paper);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+
 /* Homepage cards: one large "hero" and smaller "sub-cards"  */
 
 #hero {
@@ -79,7 +88,7 @@ nav button {
 .hero-card {
     display: block;
     background-color: var(--dark-blue);
-    height: 40vh;
+    height: 30vh;
     background-image: url('images/hero-bg.png');
     background-size: cover;
     background-position: center;
@@ -88,9 +97,11 @@ nav button {
 .sub-card {
     display: block;
     background-color: var(--dark-blue);
-    height: 20vh;
-    background-size: cover;
+    height: 30vh;
+    background-size: min(50%, 250px);
+    background-repeat: no-repeat;
     background-position: center;
+    padding: 20px
 }
 
 .index-card-content {
@@ -108,6 +119,7 @@ nav button {
 
 #denim-jackets-card {
     background-image: url(images/product3.png);
+    background-color: var(--mid-red);
 }
 
 /* Fonts and styles */
@@ -163,8 +175,6 @@ section {
     margin: 0;
 }
 
-
-
 img {
     max-width: 100%;
     height: auto;
@@ -178,6 +188,8 @@ img {
     aspect-ratio: 1/1;
     object-fit: contain;
 }
+
+/* Breadcrumb secondary nav styles */
 
 #breadcrumb {
     margin-top: 20px;
@@ -224,6 +236,23 @@ img {
 
 .btn-text{
     font-weight: 600;
+}
+
+/* Graphic elements */
+
+
+.map {
+    display: block;
+    height: 440px;
+    width: 100%;
+    background-image: url('images/map.svg');
+    background-size: cover;
+}
+
+.checkerboard {
+    height: 60px;
+    background-image: url('images/check.svg');
+    background-repeat: repeat-x;
 }
 
 @media (min-width: 1024px) {
