@@ -45,4 +45,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 }
 
+//PRODUCT INFORMATION 
+
+// Array of products, each with an ID, brand, name, price etc.
+
+const products = [
+    {
+        id: 1,
+        brand: "Grateful Dead",
+        name: "Fall Tour 1994 Tee",
+        details: "Follow the Golden Brick Road.",
+        size: "XL",
+        colour: "Green",
+        condition: "Great",
+        price: 120,
+        image: "images/product1_front.png"
+    },
+    {
+        id: 2,
+        brand: "Ozzy Osbourne",
+        name: "Ozzfest 2005 Tee",
+        details: "Original rock tee.",
+        size: "L",
+        colour: "Black",
+        condition: "Great",
+        price: 80,
+        image: "images/product2.png"
+    },
+    {
+        id: 3,
+        brand: "Vintage Levi's",
+        name: "1960s Type 3 70505 Big E",
+        details: "Denim trucker jacket, 70505 Big E",
+        size: "S",
+        colour: "Blue denim",
+        condition: "Good",
+        price: 1295,
+        image: "images/product3.png"
+    },
+    {
+        id: 4,
+        brand: "Vintage Levi's",
+        name: "1950s 507XX Big E",
+        details: "Rare second edition, 507XX BIG E",
+        size: "M-L",
+        colour: "Blue denim",
+        condition: "Some damage",
+        price: 4500,
+        image: "images/product4.png"
+    }
+];
+
+// Active shopping cart
+let cart = [];
+
 });

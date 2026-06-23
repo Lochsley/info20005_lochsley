@@ -273,26 +273,38 @@ footer p {
     margin-top: 10px;
 }
 
+.card-content p{
+    font-size: 1em;
+}
+
 .product {
     margin: 0;
 }
 
+
+/* Product thumbnails */
+
+/* Base thumbnail */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-.card-content img {
+.img-thumbnail {
     padding: 10px;
-    background-color: var(--light-blue);
     border-radius: 10px;
     aspect-ratio: 1/1;
     object-fit: contain;
 }
 
-.card-content p{
-    font-size: 1em;
+/* Colour variants */
+
+.img-thumbnail-blue {
+    background-color: var(--light-blue);
+}
+.img-thumbnail-red {
+    background-color: var(--light-red);
 }
 
 /* Breadcrumb secondary nav styles */
