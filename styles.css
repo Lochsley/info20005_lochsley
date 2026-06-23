@@ -1,18 +1,20 @@
-/* Variables for colours, fonts etc. */
+/* VARIABLES */
 
 :root {
     --dark-blue: #164467;
     --mid-blue: #4573A4;
     --light-blue: #89A3BE;
+    --lightest-blue: #d7e3ef; 
     --dark-red: #611B1B;
     --mid-red: #913B3B; 
     --light-red: #D96666;
+    --lightest-red: #E8C3B1; 
     --paper: #FFFBF4;
     --charcoal: #2F2F2F;
     --font-heading: "Holtwood One SC", serif, "Rockwell";
     --font-body: "Afacad", sans-serif;
 }
-/* Global formatting */
+/* GLOBAL FORMATTING */
 
 * {
     margin: 0;
@@ -21,7 +23,7 @@
     font-family: var(--font-body);
 }
 
-/* Fonts and styles */
+/* FONTS */
 
 a {
     text-decoration: none;
@@ -49,7 +51,7 @@ p {
     font-size: 1.5em;
 }
 
-/* Header + nav */
+/* HEADER & NAV */
 
 header {
     background-color: var(--dark-blue);
@@ -63,6 +65,8 @@ nav {
     justify-content: space-between;
     width: 100%;
 }
+
+/* Nav -- elemnts */
 
 #nav-left {
     display: flex;
@@ -87,7 +91,7 @@ nav button {
     margin-right: 10px;
 }
 
-/* Mobile menu */
+/* MOBILE MENU (hamburger) */
 
 #mobile-menu {
     position: absolute;
@@ -133,7 +137,7 @@ nav button {
     opacity: 0.5;
 }
 
-/* Cart (bag) overlay */
+/* CART OVERLAY */
 
 #cart-overlay {
     position: fixed; 
@@ -153,6 +157,7 @@ nav button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 20px;
     margin-bottom: 20px;
     border-bottom: 2px solid var(--charcoal);
     padding-bottom: 10px;
@@ -175,12 +180,12 @@ nav button {
     cursor: pointer;
 }
 
-/* Utility classes */ 
+/* UTILITY */ 
 .hidden {
     display: none !important;
 }
 
-/* Main + sections */
+/* MAIN SECTION */
 
 main {
     background-color: var(--paper);
@@ -238,6 +243,14 @@ main {
     background-color: var(--mid-red);
 }
 
+/* Product pages */
+
+#product {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+}
+
 /* Footer */
 
 #footer-content {
@@ -281,12 +294,11 @@ footer p {
     margin: 0;
 }
 
+/* THUMBNAILS */
 
-/* Product thumbnails */
-
-/* Base thumbnail */
+/* Thumbnail -- Base */
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -298,7 +310,7 @@ img {
     object-fit: contain;
 }
 
-/* Colour variants */
+/* Thumbnail -- Colour variants */
 
 .img-thumbnail-blue {
     background-color: var(--light-blue);
@@ -306,6 +318,44 @@ img {
 .img-thumbnail-red {
     background-color: var(--light-red);
 }
+
+/* CART ITEMS */
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: var(--paper); 
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+}
+
+.cart-item-img {
+    width: 80px; 
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.cart-item-details h3 {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+    color: var(--charcoal);
+}
+
+.cart-item-details h4 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--charcoal);
+}
+
+.cart-item-details p {
+    font-size: 1em;
+    color: var(--charcoal);
+    margin-bottom: 5px;
+}
+
 
 /* Breadcrumb secondary nav styles */
 
@@ -322,9 +372,9 @@ img {
     font-size: 1em;
 }
 
-/* Button and pseduo-button styles using BEM method */
+/* BUTTONS */
 
-/* Base button style */
+/* Button -- base */
 
 .btn {
     color: var(--paper);
@@ -337,7 +387,7 @@ img {
     text-align: center;
 }
 
-/* Colour variants */
+/* Button -- Colour variants */
 
 .btn-primary {
     background-color: var(--mid-red);
@@ -349,7 +399,7 @@ img {
     box-shadow: 0 5px var(--dark-blue);
 }
 
-/* Size, layout & font variants */
+/* Button -- Size, layout & font variants */
 
 .btn-card {
     font-family: var(--font-heading);
@@ -372,7 +422,7 @@ img {
     padding: 20px 30px;
 }
 
-/* Button text properties*/ 
+/* Button -- Text properties*/ 
 
 .btn-price {
    font-weight: 100;
@@ -382,7 +432,7 @@ img {
     font-weight: 600;
 }
 
-/* Graphic elements */
+/* GRAPHICS */
 
 #map {
     background-color: var(--light-blue);
@@ -489,4 +539,35 @@ img {
 #sub-cards {
     display: none;
 }
+/* [DESKTOP] PRODUCT PAGE */ 
+
+/* [Desktop] Product Page Layout */
+
+.product-page-container {
+    display: grid;
+    grid-template-columns: 7fr 3fr; 
+    gap: 0;
 }
+
+.product-sidebar {
+    background-color: var(--lightest-blue); 
+    padding: 40px;
+    height: 100vh; 
+ }
+
+ #product {
+    flex-direction: row; 
+    align-items: flex-start;
+    gap: 40px;
+ }
+
+ #main-product {
+    flex: 1; 
+    max-width: 50%;
+ }
+
+#product-info {
+    flex: 1; 
+ }
+'}
+

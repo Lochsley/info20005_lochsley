@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>American Vintage Clothing Co. - Product 1</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <title>American Vintage Clothing Co. - Product 1</title>
 </head>
+
 <body>
 <header>
+<!-- Nav bar buttons -->
     <nav>
         <div id="nav-left">
-            <button id="menu">
+            <button id="hamburger-btn">
                 <img src="icons/hamburger.svg" alt="Menu">
             </button>
-            <button id="search">
+            <button id="search-btn">
                 <img src="icons/search.svg" alt="Search">
             </button>
          </div>
@@ -24,31 +28,81 @@
             <img src="brand/submark.svg" alt="American Vintage Clothing Co. Logo">
         </a>
         <div id="nav-right">
-            <button id="fav">
+            <button id="fav-btn">
                 <img src="icons/fav.svg" alt="Favourites">
             </button>
-            <button id="bag">
+            <button id="bag-btn">
                 <img src="icons/bag.svg" alt="Shopping Bag">
             </button>
         </div>
     </nav>
-</header>
-<main>
-    <section id="breadcrumb" class="container">
-        <p><a href="index.html">Home</a> > <a href="tees.html">Tees</a> > Product 1</p>
-    </section>
-    <section id="product" class="container">
-        <img src="images/product1_front.png" id="main-product" alt="Product 1 Alt">
-        <section id="product-info">
-            <h2 id="prod-brand">Product 1 Brand</h2>
-            <h2 id="prod-name">Product 1 Name</h2>
-            <h3 id="price">$20</h3>    
-            <p></p>
-        </section>
-        <button class="btn btn-primary btn-split">
-            <span>Add to bag</span> <span id="btn-price">$20</span>  
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="hidden">
+    <ul>
+        <li><a href="new.html">New In</a></li>
+            <li>
+                <button class="accordion-btn">Clothing</button>
+                <ul class="sub-menu hidden">
+                    <li><a href="tees.html">Tees</a></li>
+                    <li><a href="denim-jackets.html">Denim Jackets</a></li>
+                </ul>
+            </li>
+        <li><span class="inactive">Footwear & Accessories</span></li>
+        <li><span class="inactive">Brands</span></li>
+    </ul>
+</div>
+
+<!-- Cart ("bag") overlay -->
+<div id="cart-overlay" class="hidden">
+    <div class="cart-header">
+        <h2>Your Bag</h2>
+        <button id="close-cart-btn">
+            <img src="icons/close.svg" alt="Close Cart">
         </button>
-    </section>
+    </div>
+    <div id="cart-items">
+        <p>Your bag is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+        <a href="checkout.html" class="btn btn-secondary btn-large">Checkout</a>
+    </div>
+</div>
+</header>
+
+<main class="product-page-container">
+    <div class="product-main-content">
+        <section id="breadcrumb" class="container">
+            <p><a href="index.html">Home</a> > <a href="tees.html">Tees</a> > Product 1</p>
+        </section>
+        <section id="product" class="container">
+            <img src="images/product1_front.png" id="main-product" class="img-thumbnail img-thumbnail-blue" alt="Grateful Dead Tee">
+            <section id="product-info"> 
+                <h2 class="product-brand">Product 1 Brand</h2>
+                <h2 class="product-name">Product 1 Name</h2>
+                <h3 class="product-price">$20</h3>    
+                <p class="product-description"></p>
+                <button id="add-to-bag-btn" class="btn btn-primary btn-split" data-id="1">
+                    <span>Add to bag</span> <span id="btn-price">$120</span>  
+                </button>
+            </section>
+        </section>
+        
+    </div>
+    
+    <aside class="product-sidebar">
+        <h3>Like this item?</h3>
+        <p>You may be interested in...</p>
+        <a href="product2.html" class="product-card">
+            <div class="card-content">
+                <img src="images/product2.png" class="img-thumbnail img-thumbnail-blue" alt="Ozzy Osbourne Tee">
+                <div class="product-details"><h3>Product 2</h3><p>$30</p></div>
+                <p class="product-name">Product 2 Name</p>
+             </div>
+        </a>
+    </aside>
+
 </main>
+
 </body>
 </html>

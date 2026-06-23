@@ -1,23 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 // HAMBURGER MENU (mobile nav)
-
-// Defines variables for hamburger button and mobile menu div.
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
-// Shows or hides mobile menu when hamburger button is clicked (using "toggle" method).
     if (hamburgerBtn && mobileMenu) {
         hamburgerBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     }
 
-// Defines variables for accordion button/list children (sub menu).
+// ACCORDION MENU
     const accordionBtn = document.querySelector('.accordion-btn');
-    const subMenu = document.querySelector('.sub-menu')
+    const subMenu = document.querySelector('.sub-menu');
 
-// Show or hides submenu items when parent is clicked (also using "toggle")
     if (accordionBtn && subMenu) {
         accordionBtn.addEventListener('click', () => {
             subMenu.classList.toggle('hidden');
@@ -25,36 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 // CART OVERLAY ('Your Bag')
-
-// Defines variables for bag button, cart overlay div, close cart button
-    const bagBtn = document.getElementById('bag-btn')
+    const bagBtn = document.getElementById('bag-btn');
     const cartOverlay = document.getElementById('cart-overlay');
     const closeCartBtn = document.getElementById('close-cart-btn');
 
-// Shows or hides cart overlay when bag button is clicked (using "toggle" method)
     if (bagBtn && cartOverlay) {
-    bagBtn.addEventListener('click', () => {
-        cartOverlay.classList.toggle('hidden');
-    });
-    
-// Hides the cart overlay when the close cart button is clicked (also using "toggle")
-    if (closeCartBtn) {
-        closeCartBtn.addEventListener('click', () => {
-            cartOverlay.classList.add('hidden');
+        bagBtn.addEventListener('click', () => {
+            cartOverlay.classList.toggle('hidden');
         });
+        
+        if (closeCartBtn) {
+            closeCartBtn.addEventListener('click', () => {
+                cartOverlay.classList.add('hidden');
+            });
+        }
     }
-}
 
-//PRODUCT INFORMATION 
-
-// Array of products, each with an ID, brand, name, price etc.
-
+// PRODUCT INFORMATION 
 const products = [
     {
         id: 1,
         brand: "Grateful Dead",
         name: "Fall Tour 1994 Tee",
         details: "Follow the Golden Brick Road.",
+        category: "tee",
         size: "XL",
         colour: "Green",
         condition: "Great",
@@ -66,6 +56,7 @@ const products = [
         brand: "Ozzy Osbourne",
         name: "Ozzfest 2005 Tee",
         details: "Original rock tee.",
+        category: "tee",
         size: "L",
         colour: "Black",
         condition: "Great",
@@ -77,6 +68,7 @@ const products = [
         brand: "Vintage Levi's",
         name: "1960s Type 3 70505 Big E",
         details: "Denim trucker jacket, 70505 Big E",
+        category: "jacket",
         size: "S",
         colour: "Blue denim",
         condition: "Good",
@@ -88,6 +80,7 @@ const products = [
         brand: "Vintage Levi's",
         name: "1950s 507XX Big E",
         details: "Rare second edition, 507XX BIG E",
+        category: "jacket",
         size: "M-L",
         colour: "Blue denim",
         condition: "Some damage",
@@ -96,7 +89,62 @@ const products = [
     }
 ];
 
-// Active shopping cart
-let cart = [];
+// CART LOGIC
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-});
+function updateCartUI() {
+    const cartItemsContainer = document.getElementById('cart-items');
+
+    if (!cartItemsContainer) return;
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>Your bag is currently empty.</p>';
+        return;
+    }
+
+    cartItemsContainer.innerHTML = '';
+
+    cart.forEach((item) => {
+        const colourClass = (item.category === "jacket") ? "img-thumbnail-red" : "img-thumbnail-blue";
+    
+        const itemHTML = `
+            <div class="cart-item-card">
+                <img src="${item.image}" alt="${item.name}" class="img-thumbnail ${colourClass} cart-item-img">
+                <div class="cart-item-details">
+                    <h3>${item.brand}</h3>
+                    <h4>${item.name}</h4>
+                    <p>Size: ${item.size}</p>
+                    <p>$${item.price}</p>
+                </div>
+            </div>
+        `;
+
+        cartItemsContainer.innerHTML += itemHTML;
+    });
+}
+
+// PRODUCT ID FUNCTION
+function addToCart(productId) {
+    const productToAdd = products.find(item => item.id === productId);
+
+    if (productToAdd) {
+        cart.push(productToAdd);
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        cartOverlay.classList.remove('hidden');
+        updateCartUI(); 
+    }
+}
+
+// BUTTON LISTENER
+const addToBagBtn = document.getElementById('add-to-bag-btn');
+
+if (addToBagBtn) {
+    addToBagBtn.addEventListener('click', () => {
+        const productId = parseInt(addToBagBtn.getAttribute('data-id'));
+        addToCart(productId);
+    });
+}
+
+}); 
