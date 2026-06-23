@@ -21,6 +21,34 @@
     font-family: var(--font-body);
 }
 
+/* Fonts and styles */
+
+a {
+    text-decoration: none;
+}
+
+h1 { 
+    color: var(--mid-red);
+    font-family: var(--font-heading);
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-size: 24pt;
+    font-weight: 600;
+}
+
+#prod-name {
+    font-weight: 100;
+}
+
+p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
 /* Header + nav */
 
 header {
@@ -61,16 +89,13 @@ nav button {
 
 /* Man + sections */
 
-
 main {
     background-color: var(--paper);
 }
 
-section {
+.container {
     margin: 20px;
 }
-
-
 
 /* Homepage cards: one large "hero" and smaller "sub-cards"  */
 
@@ -79,10 +104,6 @@ section {
 }
 
 #sub-cards {
-    margin: 0;
-}
-
-.sub-card {
     margin: 0;
 }
 
@@ -96,6 +117,7 @@ section {
 }
 
 .sub-card {
+    margin: 0;
     display: block;
     background-color: var(--dark-blue);
     height: 30vh;
@@ -123,31 +145,18 @@ section {
     background-color: var(--mid-red);
 }
 
-/* Fonts and styles */
+/* Footer */
 
-a {
-    text-decoration: none;
+#footer-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-h1 { 
-    color: var(--mid-red);
-    font-family: var(--font-heading);
-    font-weight: 400;
-    font-style: normal;
-}
-
-h2 {
-    font-size: 24pt;
-    font-weight: 600;
-}
-
-#prod-name {
-    font-weight: 100;
-}
-
-p {
-    font-family: var(--font-body);
-    font-weight: 400;
+footer p {
     font-size: 1em;
 }
 
@@ -189,6 +198,10 @@ img {
     object-fit: contain;
 }
 
+.card-content p{
+    font-size: 1em;
+}
+
 /* Breadcrumb secondary nav styles */
 
 #breadcrumb {
@@ -197,6 +210,11 @@ img {
 
 #breadcrumb a {
     font-style: italic;
+    font-size: 1em;
+}
+
+#breadcrumb p{ 
+    font-size: 1em;
 }
 
 /* Button and pseduo-button styles */
@@ -240,12 +258,17 @@ img {
 
 /* Graphic elements */
 
+#map {
+    background-color: var(--light-blue);
+    padding: 20px;
+}
 
-.map {
+#map a{
     display: block;
-    height: 440px;
     width: 100%;
+    aspect-ratio: 1/1;
     background-image: url('images/map.svg');
+    background-color: var(--light-blue);
     background-size: cover;
 }
 
@@ -255,9 +278,89 @@ img {
     background-repeat: repeat-x;
 }
 
+/* Desktop-only sections */
+
+#desktop-new-in {
+    display: none;
+}
+
+#desktop-shop {
+    display: none;
+    background-color: var(--light-blue);
+}
+
+#desktop-shop h1{
+    color: var(--paper);
+}
+
+#desktop-divider {
+    display: none;
+}
+
 @media (min-width: 1024px) {
 
- #product-list { 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;    
+    gap: 20px;
+    height: 400px;
+}
 
+.desktop-card {
+    border-radius: 10px;
+    display: flex; 
+    text-decoration: none;
+}
+
+.large-card {
+    grid-row: span 2; 
+    background-image: url('images/hero-desktop.jpg'); 
+    background-size: cover;
+    background-position: center;
+    align-items: flex-end;
+    justify-content: center; 
+    padding-bottom: 40px;
+}
+
+.small-card {
+    align-items: center; 
+    justify-content: space-around; 
+    padding: 20px;
+}
+
+.small-card.denim { background-color: var(--dark-blue); }
+.small-card.tees { background-color: var(--dark-blue); }
+
+.small-card img {
+    height: 80%; 
+    width: auto;
+}
+
+ #product-list { 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#desktop-new-in {
+    display: block;
+}
+
+#desktop-shop {
+    display: block;
+    padding: 20px; 
+    min-height: 800px;
+    overflow: hidden;
+}
+
+#desktop-divider {
+    display: block;
+}
+
+#hero {
+    display: none;
+}
+
+#sub-cards {
+    display: none;
+}
 }

@@ -31,7 +31,7 @@
     </nav>
 </header>
 <main>
-<!-- Anchor element is used to keep entire card interactable, while spans are styled as buttons to create "clickable" affordance.-->
+<!-- Cards -->
     <section id="hero">
         <a href="new.html" class="hero-card">
             <div class="index-card-content">
@@ -51,14 +51,70 @@
             </div>
         </a>
     </section>
+<!-- New In (Desktop-only) -->
+    <section id="desktop-new-in" class="container">
+        <h1>New In</h1>
+        <section id="product-list">
+            <a href="product1.html" class="product-card">
+                <div class="card-content">
+                    <img src="images/product1_front.png" alt="Grateful Dead Tee">
+                    <div class="product-details"><h3>Product 1</h3><p>$20</p></div>
+                    <p class="product-name">Product 1 Name</p>
+                </div>
+            </a>
+            <a href="product2.html" class="product-card">
+                <div class="card-content">
+                    <img src="images/product2.png" alt="Ozzy Osbourne Tee">
+                    <div class="product-details"><h3>Product 2</h3><p>$30</p></div>
+                    <p class="product-name">Product 2 Name</p>
+                </div>
+            </a>
+            <a href="product3.html" class="product-card">
+                <div class="card-content">
+                    <img src="images/product3.png" alt="Grateful Dead Tee">
+                    <div class="product-details"><h3>Product 3</h3><p>$20</p></div>
+                    <p class="product-name">Product 3 Name</p>
+                </div>
+            </a>
+            <a href="product4.html" class="product-card">
+                <div class="card-content">
+                    <img src="images/product4.png" alt="Grateful Dead Tee">
+                    <div class="product-details"><h3>Product 4</h3><p>$20</p></div>
+                    <p class="product-name">Product 4 Name</p>
+                </div>
+            </a>
+        </section>
+    </section>
+<!-- Shop (Desktop-only) -->
+ <div id="desktop-divider" class ="checkerboard"></div>
+    <section id="desktop-shop">
+        <section class="container"> 
+        <h1>Shop</h1>
+        <div class="shop-grid">
+            <a href="new.html" class="desktop-card large-card">
+                <span class="card-btn">New In</span>
+            </a>
+            <a href="denim-jackets.html" class="desktop-card small-card denim">
+                <img src="images/product3.png" alt="Denim Jacket">
+                <span class="card-btn">Denim Jackets</span>
+            </a>
+            <a href="tees.html" class="desktop-card small-card tees">
+                <img src="images/tee.png" alt="Louisana Tee">
+                <span class="card-btn">Tees</span>
+            </a>
+        </div>
+        </section>
+    </section>
     <div class ="checkerboard"></div>
-    <section id="visit" class="info">
+    <section id="visit" class="container">
         <h1>Visit us</h1>
         <p>Check out the full collections!</p>
         <p>133 Brunswick Street, Fitzroy 3065</p>
-        <a href="https://maps.app.goo.gl/vPZJQgD94iezXkmE8" class="map"></a>
     </section>
-    <section id="hours" class="info">
+    <section id="map"> 
+        <a href="https://maps.app.goo.gl/vPZJQgD94iezXkmE8"></a>
+    </section>
+    <section id="hours" class="container">
         <h1>Opening Hours</h1>
         <p>Mon and Tues - Closed</p>
         <p>Wed to Fri - 11am to 4pm</p>
@@ -66,10 +122,12 @@
         <p>Sun - 12pm to 4pm</p>
     </section>
     <footer>
-    <div class ="checkerboard"></div>
-    <p>Photography by American Vintage Clothing Co.</p>
-    <p>Design, icons and logo by Lochsley Wilson.</p>
-
+        <div class ="checkerboard"></div>
+        <div id="footer-content">
+            <img src="images/logo_horizontal_lightbg.svg">
+            <p>Photography by American Vintage Clothing Co.</p>
+            <p>Design, icons and logo by Lochsley Wilson.</p>
+        </div>
     </footer>
 </main>
 </body>
