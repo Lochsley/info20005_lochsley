@@ -104,6 +104,16 @@ nav button {
     list-style: none;
 }
 
+#mobile-menu a, .accoridon-btn {
+    font-family: var(--font-body);
+    font-size: 2em;
+    color: var(--charcoal);
+    display: block;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
 .hidden {
     display: none;
 }
