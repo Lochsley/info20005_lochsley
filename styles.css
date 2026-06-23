@@ -1,8 +1,9 @@
 /* VARIABLES */
 
 :root {
+    --darkest-blue: #05243b;
     --dark-blue: #164467;
-    --mid-blue: #4573A4;
+    --mid-blue: #2964a4;
     --light-blue: #89A3BE;
     --lightest-blue: #d7e3ef; 
     --dark-red: #611B1B;
@@ -63,10 +64,12 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: calc(env(safe-area-inset-top, 0px) + 20px) 10px 30px 10px;
     width: 100%;
 }
 
-/* Nav -- elemnts */
+/* Nav -- elements */
 
 #nav-left {
     display: flex;
@@ -89,6 +92,31 @@ nav button {
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+/* Nav - Cart button + item count badge */
+
+.cart-btn-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: var(--mid-red);
+    color: var(--paper);
+    font-size: 0.7em;
+    font-weight: 600;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 10px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* MOBILE MENU (hamburger) */
@@ -185,6 +213,10 @@ nav button {
     display: none !important;
 }
 
+.desktop-only {
+    display: none !important;
+}
+
 /* MAIN SECTION */
 
 main {
@@ -243,29 +275,13 @@ main {
     background-color: var(--mid-red);
 }
 
-/* Product pages */
+/* PRODUCT PAGE */
 
 #product {
     display: flex;
     flex-direction: column; 
     gap: 20px;
 }
-
-/* Footer */
-
-#footer-content {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-footer p {
-    font-size: 1em;
-}
-
 
 /* Product list + product cards  */
 
@@ -395,8 +411,8 @@ img {
 }
 
 .btn-secondary {
-    background-color: var(--mid-blue);
-    box-shadow: 0 5px var(--dark-blue);
+    background-color: var(--dark-blue);
+    box-shadow: 0 5px var(--darkest-blue);
 }
 
 /* Button -- Size, layout & font variants */
@@ -454,6 +470,26 @@ img {
     background-repeat: repeat-x;
 }
 
+/* FOOTER */
+
+#footer-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+.footer-logo {
+    max-height: 80px;
+}
+
+
 /* Desktop-only sections */
 
 #desktop-new-in {
@@ -473,44 +509,146 @@ img {
     display: none;
 }
 
+/* DESKTOP DISPLAY CHANGES*/
+
 @media (min-width: 1024px) {
+
+/* UTILITY */
+
+.mobile-only {
+    display: none !important;
+}
+
+.desktop-only {
+    display: block !important;
+}
+
+/* CONTAINER CONSTRAINTS */
+nav, .container, .product-page-container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* NAV BAR */ 
+
+nav {
+    align-items: center;
+    padding: 20px 40px;
+}
+
+#nav-logo .desktop-only {
+    height: 100px; 
+    padding-bottom: 20px;
+}
+
+/* Nav bar -- Menu */
+#desktop-dropdown-menu {
+    position: absolute;
+    top: 150%; /* Pushes the menu just below the nav text */
+    left: 50%;
+    transform: translateX(-50%); /* Perfectly centers it under the "CLOTHING" button */
+    background-color: var(--paper);
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Adds a soft drop shadow to float above content */
+    z-index: 1000;
+    white-space: nowrap; /* Prevents the horizontal list from squishing */
+}
+
+#desktop-dropdown-menu a.inactive {
+    opacity: 0.5;
+    cursor: default; 
+}
+
+#desktop-dropdown-menu a.inactive:hover {
+    color: var(--charcoal) !important; 
+}
+
+#desktop-dropdown-menu .dropdown-list {
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Override the white header text so we can read the links on the paper background */
+#desktop-dropdown-menu a {
+    color: var(--charcoal) !important;
+    font-weight: 400 !important;
+    font-size: 1.1em !important;
+    transition: color 0.2s ease;
+}
+
+#desktop-dropdown-menu a:hover {
+    color: var(--mid-red) !important;
+}
+
+
+#desktop-nav-links ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+#desktop-nav-links a, #desktop-nav-links .inactive {
+    color: var(--paper);
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.1em;
+}
+
+#desktop-nav-links .inactive {
+    opacity: 0.5;
+}
+
+
+
+/* "SHOP" BENTO */
 
 .shop-grid {
     display: grid;
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr;    
+    grid-template-rows: auto auto;   
     gap: 20px;
-    height: 400px;
 }
 
-.desktop-card {
+/* Bento -- Base Card */
+
+.bento-card {
     border-radius: 10px;
-    display: flex; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
     text-decoration: none;
+    overflow: hidden;
 }
 
-.large-card {
-    grid-row: span 2; 
-    background-image: url('images/hero-desktop.jpg'); 
+/* Bento -- Elements */
+
+.bento-card__img {
+    max-height: 200px; 
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* Bento -- Colour variants */
+
+.bento-card--blue { background-color: var(--dark-blue); }
+.bento-card--red { background-color: var(--mid-red); }
+
+/* Bento -- Layout variant */
+
+.bento-card--large {
+    grid-row: span 2;
+    background-image: url('images/hero-desktop.jpg');
     background-size: cover;
     background-position: center;
-    align-items: flex-end;
-    justify-content: center; 
+    align-items: flex-end; 
     padding-bottom: 40px;
-}
-
-.small-card {
-    align-items: center; 
-    justify-content: space-around; 
-    padding: 20px;
-}
-
-.small-card.denim { background-color: var(--dark-blue); }
-.small-card.tees { background-color: var(--dark-blue); }
-
-.small-card img {
-    height: 80%; 
-    width: auto;
 }
 
  #product-list { 
@@ -569,5 +707,5 @@ img {
 #product-info {
     flex: 1; 
  }
-'}
+}
 

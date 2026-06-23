@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+// DESKTOP DROPDOWN MENU
+const desktopClothingBtn = document.getElementById('desktop-clothing-btn');
+const desktopDropdownMenu = document.getElementById('desktop-dropdown-menu');
+
+if (desktopClothingBtn && desktopDropdownMenu) {
+    desktopClothingBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Stops the page from jumping back to the top when you click the link!
+        desktopDropdownMenu.classList.toggle('hidden');
+    });
+}
+
 // CART OVERLAY ('Your Bag')
     const bagBtn = document.getElementById('bag-btn');
     const cartOverlay = document.getElementById('cart-overlay');
@@ -92,6 +103,8 @@ const products = [
 // CART LOGIC
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+updateCartUI();
+
 function updateCartUI() {
     const cartItemsContainer = document.getElementById('cart-items');
 
@@ -155,6 +168,19 @@ if (addToBagBtn) {
         const productId = parseInt(addToBagBtn.getAttribute('data-id'));
         addToCart(productId);
     });
+}
+
+// CART TOTAL BADGE
+
+const cartBadge = document.getElementById('cart-badge');
+    
+if (cartBadge) {
+    if (cart.length > 0) {
+        cartBadge.textContent = cart.length;
+        cartBadge.classList.remove('hidden'); 
+    } else {
+        cartBadge.classList.add('hidden'); 
+    }
 }
 
 }); 
