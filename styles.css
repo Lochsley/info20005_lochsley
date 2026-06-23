@@ -3,9 +3,9 @@
 :root {
     --darkest-blue: #05243b;
     --dark-blue: #164467;
-    --mid-blue: #4573A4;
-    --light-blue: #89A3BE;
-    --lightest-blue: #d7e3ef; 
+    --mid-blue: #3b7da0;
+    --light-blue: #8eb2c9;
+    --lightest-blue: #bdd2e1; 
     --dark-red: #611B1B;
     --mid-red: #913B3B; 
     --light-red: #D96666;
@@ -422,6 +422,133 @@ img {
     color: var(--charcoal);
     margin-bottom: 5px;
 }
+/* CHECKOUT */
+.checkout-container {
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+
+.checkout-form-section h2, .checkout-summary-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--charcoal);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--lightest-blue);
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: var(--font-body);
+    background-color: white;
+    color: var(--charcoal);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--mid-blue);
+}
+
+.checkout-summary-section {
+    background-color: var(--lightest-blue);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+}
+
+.checkout-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--charcoal);
+}
+
+.checkout-total-row h3 {
+    margin: 0;
+}
+
+/* --- CONFIRMATION OVERLAY --- */
+#confirmation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--paper);
+    z-index: 2000; 
+    overflow-y: auto; 
+}
+
+.confirmation-container {
+    max-width: 600px; 
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.success-icon-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.success-icon {
+    background-color: var(--mid-blue);
+    color: var(--paper);
+    font-size: 3em;
+    width: 45px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.confirmation-section {
+    margin-bottom: 30px;
+}
+
+.confirmation-section h3 {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--charcoal);
+}
+
+.confirmation-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.confirmation-total {
+    border-top: 1px solid var(--charcoal);
+    padding-top: 10px;
+    margin-top: 10px;
+}
 
 /* BREADCRUMB (Secondary Nav) */
 
@@ -517,21 +644,68 @@ img {
     font-weight: 600;
 }
 
-/* GRAPHICS */
+/* PRE-FOOTER (map, hours, contact)*/
 
-#map {
-    background-color: var(--light-blue);
-    padding: 20px;
+.pre-footer-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 40px 0;
 }
 
-#map a{
+.pre-footer-left {
+    position: relative; 
+    z-index: 1; 
+    background-color: var(--light-blue); 
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.visit-card {
+    background-color: var(--paper); 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.visit-card h1 {
+    margin-bottom: 10px;
+}
+
+#map-container a {
     display: block;
     width: 100%;
     aspect-ratio: 1/1;
     background-image: url('images/map.svg');
     background-color: var(--light-blue);
     background-size: cover;
+    border-radius: 10px;
 }
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 10px;
+    font-size: 1.2em;
+    color: var(--charcoal);
+    margin-bottom: 40px;
+}
+
+.align-right {
+    text-align: right; 
+}
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h1 {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* GRAPHICS */
 
 .checkerboard {
     height: 60px;
@@ -671,8 +845,6 @@ nav {
     opacity: 0.5;
 }
 
-
-
 /* "SHOP" BENTO */
 
 .shop-grid {
@@ -720,6 +892,17 @@ nav {
     padding-bottom: 40px;
 }
 
+.bento-card--horizontal {
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+.bento-card--horizontal .bento-card__img {
+    margin-bottom: 0;
+    margin-right: 20px;
+    height: 160px; 
+}
+
  #product-list { 
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
@@ -730,8 +913,7 @@ nav {
 
 #desktop-shop {
     display: block;
-    padding: 20px; 
-    min-height: 800px;
+    padding: 20px 20px 60px 20px;
     overflow: hidden;
 }
 
@@ -746,9 +928,44 @@ nav {
 #sub-cards {
     display: none;
 }
-/* [DESKTOP] PRODUCT PAGE */ 
 
-/* [Desktop] Product Page Layout */
+/* PRE-FOOTER (desktop) */
+.pre-footer-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; 
+    align-items: flex-start; 
+}
+
+.pre-footer-left {
+    border-radius: 0 20px 20px 0; 
+    padding: 40px;
+}
+
+.pre-footer-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%; 
+    width: 100vw;
+    height: 100%;
+    background-color: var(--light-blue);
+    z-index: -1;
+}
+
+.pre-footer-right {
+    padding-top: 60px;
+    padding-bottom: 40px; 
+    padding-left: 20px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+/* PRODUCT PAGE (desktop) */ 
+
+/* Product Page Layout (desktop) */
 
 .product-heading-group {
     margin: 0px;
@@ -799,5 +1016,33 @@ nav {
 #product-info {
     flex: 1;
  }
+
+/* CHECKOUT DESKTOP */
+.checkout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: flex-start; 
 }
 
+.checkout-summary-section {
+    margin-top: 0; 
+    position: sticky; 
+    top: 120px; 
+}
+
+}
+
+/* --- CHECKOUT MOBILE REORDER --- */
+@media (max-width: 1023px) {
+    .checkout-container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .checkout-summary-section {
+        order: -1; 
+        margin-top: 0;
+        margin-bottom: 40px; 
+    }
+}

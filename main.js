@@ -183,4 +183,73 @@ if (cartBadge) {
     }
 }
 
+// --- CHECKOUT PAGE LOGIC ---
+const checkoutSummaryContainer = document.getElementById('checkout-summary-items');
+const checkoutOrderTotal = document.getElementById('checkout-order-total');
+
+if (checkoutSummaryContainer && checkoutOrderTotal) {
+    
+    if (cart.length === 0) {
+        checkoutSummaryContainer.innerHTML = '<p>Your bag is empty.</p>';
+        checkoutOrderTotal.textContent = '$0';
+    } else {
+        checkoutSummaryContainer.innerHTML = '';
+        let total = 0;
+
+        cart.forEach((item) => {
+            total += item.price; 
+
+            const itemHTML = `
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 1.1em;">
+                    <span style="color: var(--charcoal);">${item.brand} - ${item.name}</span>
+                    <span style="font-weight: 600; color: var(--charcoal);">$${item.price}</span>
+                </div>
+            `;
+            
+            checkoutSummaryContainer.innerHTML += itemHTML;
+        });
+
+        checkoutOrderTotal.textContent = `$${total}`;
+    }
+}
+
+// --- CHECKOUT FORM SUBMISSION ---
+const checkoutForm = document.getElementById('checkout-form');
+const confirmationOverlay = document.getElementById('confirmation-overlay');
+
+if (checkoutForm && confirmationOverlay) {
+    checkoutForm.addEventListener('submit', (e) => {
+
+        e.preventDefault(); 
+
+
+        const nameInput = document.getElementById('name').value;
+        const addressInput = document.getElementById('address').value;
+        const cardInput = document.getElementById('ccnum').value;
+        
+        const last4 = cardInput.slice(-4) || "XXXX";
+        
+        document.getElementById('confirm-name').textContent = nameInput;
+        document.getElementById('confirm-address').textContent = addressInput;
+        document.getElementById('confirm-card').textContent = last4;
+        
+        document.getElementById('confirm-total').textContent = document.getElementById('checkout-order-total').textContent;
+
+        cart = [];
+        localStorage.removeItem('cart');
+        updateCartUI();
+
+        confirmationOverlay.classList.remove('hidden');
+        window.scrollTo(0, 0); 
+    });
+
+// Close button logic for the confirmation screen
+    const closeConfirmBtn = document.getElementById('close-confirmation-btn');
+    if (closeConfirmBtn) {
+        closeConfirmBtn.addEventListener('click', () => {
+            window.location.href = 'index.html'; 
+        });
+    }
+}
+
 }); 
