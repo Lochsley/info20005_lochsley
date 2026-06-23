@@ -26,7 +26,7 @@ const desktopDropdownMenu = document.getElementById('desktop-dropdown-menu');
 
 if (desktopClothingBtn && desktopDropdownMenu) {
     desktopClothingBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Stops the page from jumping back to the top when you click the link!
+        e.preventDefault(); 
         desktopDropdownMenu.classList.toggle('hidden');
     });
 }

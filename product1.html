@@ -14,29 +14,48 @@
 
 <body>
 <header>
-<!-- Nav bar buttons -->
+<!-- NAV BAR (with mobile-only and desktop-only elements) -->
     <nav>
+<!-- Nav bar -- Left-aligned elements -->
         <div id="nav-left">
-            <button id="hamburger-btn">
+            <button id="hamburger-btn" class="mobile-only">
                 <img src="icons/hamburger.svg" alt="Menu">
             </button>
-            <button id="search-btn">
-                <img src="icons/search.svg" alt="Search">
-            </button>
          </div>
-        <a href="index.html" id="nav-logo">
-            <img src="brand/submark.svg" alt="American Vintage Clothing Co. Logo">
-        </a>
+<!-- Nav bar -- Centre-aligned elements -->
+        <div id="nav centre">
+            <a href="index.html" id="nav-logo">
+                <img src="brand/submark.svg" class="mobile-only" alt="American Vintage Clothing Co.">
+                <img src="brand/horizontal-logo.svg" class="desktop-only" alt="American Vintage Clothing Co.">
+            </a>
+<!-- Nav bar -- Desktop-only nav links -->
+            <div id="desktop-nav-links" class="desktop-only">
+                <ul>
+                    <li><a href="new.html">NEW IN</a></li>
+                    <li style="position: relative;">
+                        <a href="#" id="desktop-clothing-btn">CLOTHING</a>
+                        <div id="desktop-dropdown-menu" class="hidden">
+                            <ul class="dropdown-list">
+                                <li><a href="tees.html">Tops</a></li>
+                                <li><a href="denim-jackets.html">Jackets & Coats</a></li>
+                                <li><a href="#" class="inactive">Bottoms</a></li>
+                                <li><a href="#" class="inactive">Dresses & Overalls</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><span class="inactive">FOOTWEAR & ACCESSORIES</span></li>
+                    <li><span class="inactive">BRANDS</span></li>
+                </ul>
+            </div>
+         </div>
+<!-- Nav bar -- Right-aligned elements -->
         <div id="nav-right">
-            <button id="fav-btn">
-                <img src="icons/fav.svg" alt="Favourites">
-            </button>
-            <button id="bag-btn">
+            <button id="bag-btn" class="cart-btn-container">
                 <img src="icons/bag.svg" alt="Shopping Bag">
+                <span id="cart-badge" class="cart-badge hidden">0</span>
             </button>
         </div>
     </nav>
-
 <!-- Mobile menu overlay -->
 <div id="mobile-menu" class="hidden">
     <ul>
@@ -52,7 +71,6 @@
         <li><span class="inactive">Brands</span></li>
     </ul>
 </div>
-
 <!-- Cart ("bag") overlay -->
 <div id="cart-overlay" class="hidden">
     <div class="cart-header">
@@ -73,15 +91,27 @@
 <main class="product-page-container">
     <div class="product-main-content">
         <section id="breadcrumb" class="container">
-            <p><a href="index.html">Home</a> > <a href="tees.html">Tees</a> > Product 1</p>
+            <p>
+                <a href="index.html" class="breadcrumb-link">Home</a> 
+                <span class="breadcrumb-inactive"> > Clothing > Tops ></span>
+                <a href="tees.html" class="breadcrumb-link">Tees</a> 
+                <span class="breadcrumb-inactive"> > </span>
+                <span class="breadcrumb-current">Fall Tour 1994 Tee</span>
+            </p>
         </section>
+        <div class="product-heading-group">
+            <h1 class="brand">Grateful Dead</h1>
+            <h1 id="name">Fall Tour 1994 Tee</h1>
+        </div>
         <section id="product" class="container">
             <img src="images/product1_front.png" id="main-product" class="img-thumbnail img-thumbnail-blue" alt="Grateful Dead Tee">
             <section id="product-info"> 
-                <h2 class="product-brand">Product 1 Brand</h2>
-                <h2 class="product-name">Product 1 Name</h2>
-                <h3 class="product-price">$20</h3>    
-                <p class="product-description"></p>
+                <h3 class="product-brand">Grateful Dead</h2>
+                <h3 class="product-name">Fall Tour 1994 Tee</h2>
+                <p class="product-description">Follow the Golden Brick Road. Original rock tee.</p>
+                <p class="product-variable"><span class="product-variable--name">Colour</span><span class="product-variable--data">Green</span></p>
+                <p class="product-variable"><span class="product-variable--name">Size</span><span class="product-variable--data">XL</span></p>
+                <p class="product-variable"><span class="product-variable--name">Condition</span><span class="product-variable--data">Great</span></p>
                 <button id="add-to-bag-btn" class="btn btn-primary btn-split" data-id="1">
                     <span>Add to bag</span> <span id="btn-price">$120</span>  
                 </button>
@@ -90,8 +120,8 @@
         
     </div>
     
-    <aside class="product-sidebar">
-        <h3>Like this item?</h3>
+    <aside id="product-sidebar" class="desktop-only">
+        <h2>Like this item?</h2>
         <p>You may be interested in...</p>
         <a href="product2.html" class="product-card">
             <div class="card-content">
@@ -103,6 +133,13 @@
     </aside>
 
 </main>
-
+<footer>
+    <div class ="checkerboard"></div>
+    <div id="footer-content">
+        <img src="images/logo_horizontal_lightbg.svg" class="footer-logo" alt="American Vintage Clothing Co.">
+        <p>Photography by American Vintage Clothing Co.</p>
+        <p>Design, icons and logo by Lochsley Wilson.</p>
+    </div>
+</footer>
 </body>
 </html>
