@@ -87,7 +87,28 @@ nav button {
     margin-right: 10px;
 }
 
-/* Man + sections */
+/* Mobile menu */
+
+#mobile-menu {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 100%;
+    left: 0;
+    background-color: var(--paper);
+    padding: 20px;
+    z-index: 999;
+}
+
+#mobile-menu ul {
+    list-style: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Main + sections */
 
 main {
     background-color: var(--paper);
