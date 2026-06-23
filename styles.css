@@ -61,7 +61,7 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: 100%;
 }
 
 #nav-left {
@@ -133,8 +133,51 @@ nav button {
     opacity: 0.5;
 }
 
+/* Cart (bag) overlay */
+
+#cart-overlay {
+    position: fixed; 
+    top: 0;
+    right: 0; 
+    max-width: 500px;
+    width: 100%; 
+    height: 100vh;
+    background-color: var(--paper);
+    padding: 20px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--charcoal);
+    padding-bottom: 10px;
+}
+
+.cart-footer {
+    width: 100%;
+    padding-top: 10px;
+    margin-bottom: 30px; 
+}
+#cart-items {
+    flex-grow: 1; 
+    overflow-y: auto; 
+    margin-bottom: 20px;
+}
+
+#close-cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Utility classes */ 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Main + sections */
@@ -267,36 +310,57 @@ img {
     font-size: 1em;
 }
 
-/* Button and pseduo-button styles */
+/* Button and pseduo-button styles using BEM method */
 
-.card-btn {
-    background-color: var(--mid-red);
-    font-family: var(--font-heading);
+/* Base button style */
+
+.btn {
     color: var(--paper);
     padding: 10px 20px;
     border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Colour variants */
+
+.btn-primary {
+    background-color: var(--mid-red);
     box-shadow: 0 5px var(--dark-red);
 }
 
-.bag-btn {
+.btn-secondary {
+    background-color: var(--mid-blue);
+    box-shadow: 0 5px var(--dark-blue);
+}
+
+/* Size, layout & font variants */
+
+.btn-card {
+    font-family: var(--font-heading);
+}
+
+.btn-large {
+    font-size: 1.5em;
+    display: block;
+    width: 100%;
+    padding: 20px 30px; 
+    box-sizing: border-box;
+}
+
+.btn-split {
     display: flex;
     justify-content: space-between;
-    background-color: var(--mid-red);
-    box-shadow: 0 10px var(--dark-red);
-    width: 100%;
-    border: none;
-    color: var(--paper);
-    padding: 20px 30px;
     text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 10px;
-    cursor: pointer;
+    font-size: 1.5em;
+    width: 100%;
+    padding: 20px 30px;
 }
 
-.bag-btn: { 
-
-}
+/* Button text properties*/ 
 
 .btn-price {
    font-weight: 100;

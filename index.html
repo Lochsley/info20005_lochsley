@@ -16,7 +16,7 @@
             <button id="hamburger-btn">
                 <img src="icons/hamburger.svg" alt="Menu">
             </button>
-            <button id="search">
+            <button id="search-btn">
                 <img src="icons/search.svg" alt="Search">
             </button>
          </div>
@@ -24,16 +24,16 @@
             <img src="brand/submark.svg" alt="American Vintage Clothing Co. Logo">
         </a>
         <div id="nav-right">
-            <button id="fav">
+            <button id="fav-btn">
                 <img src="icons/fav.svg" alt="Favourites">
             </button>
-            <button id="bag">
+            <button id="bag-btn">
                 <img src="icons/bag.svg" alt="Shopping Bag">
             </button>
         </div>
     </nav>
 
-<!-- Mobile Menu -->
+<!-- Mobile menu overlay -->
 
 <div id="mobile-menu" class="hidden">
     <ul>
@@ -50,29 +50,48 @@
     </ul>
 </div>
 
+<!-- Cart ("bag") overlay -->
+
+<div id="cart-overlay" class="hidden">
+    <div class="cart-header">
+        <h2>Your Bag</h2>
+        <button id="close-cart-btn">
+            <img src="icons/close.svg" alt="Close Cart">
+        </button>
+    </div>
+    <div id="cart-items">
+        <p>Your bag is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+        <a href="checkout.html" class="btn btn-secondary btn-large">Checkout</a>
+    </div>
+</div>
+
 </header>
 <main>
+
 
 <!-- Cards -->
     <section id="hero">
         <a href="new.html" class="hero-card">
             <div class="index-card-content">
-                <span class="card-btn">New In</span>
+                <span class="btn btn-card btn-primary">New In</span>
             </div>
         </a>
     </section>
     <section id="sub-cards">
          <a href="tees.html" class="sub-card" id="tees-card">
             <div class="index-card-content">
-                <span class="card-btn">Tees</span>
+                <span class="btn btn-card btn-primary">Tees</span>
             </div>
         </a>
          <a href="denim-jackets.html" class="sub-card" id="denim-jackets-card">
             <div class="index-card-content">
-                <span class="card-btn">Denim Jackets</span>
+                <span class="btn btn-card btn-primary">Denim Jackets</span>
             </div>
         </a>
     </section>
+
 <!-- New In (Desktop-only) -->
     <section id="desktop-new-in" class="container">
         <h1>New In</h1>
@@ -107,6 +126,7 @@
             </a>
         </section>
     </section>
+
 <!-- Shop (Desktop-only) -->
  <div id="desktop-divider" class ="checkerboard"></div>
     <section id="desktop-shop">
