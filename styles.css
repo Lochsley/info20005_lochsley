@@ -104,14 +104,33 @@ nav button {
     list-style: none;
 }
 
-#mobile-menu a, .accoridon-btn {
+#mobile-menu a, .accordion-btn {
     font-family: var(--font-body);
     font-size: 2em;
     color: var(--charcoal);
     display: block;
     text-decoration: none;
     border: none;
+    background: none;
     cursor: pointer;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#mobile-menu .sub-menu a {
+    font-size: 1.5em;
+    font-weight: 400;
+    padding-left: 20px;
+}
+
+#mobile-menu .inactive {
+    font-family: var(--font-body);
+    font-size: 2em;
+    font-style: italic;
+    display: block;
+    margin-bottom: 20px;
+    cursor: default;
+    opacity: 0.5;
 }
 
 .hidden {
