@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Holtwood+One+SC&display=swap" rel="stylesheet">
-    <title>American Vintage Clothing Co. - Denim Jackets</title>
+    <title>American Vintage Clothing Co. - Product 1</title>
 </head>
 
 <body>
@@ -88,32 +88,52 @@
 </div>
 </header>
 
-<main>
-    <section id="breadcrumb" class="container">
-        <p>
-            <a href="index.html" class="breadcrumb-link">Home</a> 
-            <span class="breadcrumb-inactive"> > </span>
-            <span class="breadcrumb-current">Denim Jackets</span>
-        </p>
-    </section>
-    <section id="products" class="container">
-        <h1>Denim Jackets</h1>
-        <section id="product-list">
-            <a href="product3.html" class="product-card">
+<main class="product-page-container">
+    <div class="product-main-content">
+        <section id="breadcrumb" class="container">
+            <p>
+                <a href="index.html" class="breadcrumb-link">Home</a> 
+                <span class="breadcrumb-inactive"> ></span>
+                <a href="denim-jackets.html" class="breadcrumb-link">Denim Jackets</a> 
+                <span class="breadcrumb-inactive"> > </span>
+                <span class="breadcrumb-current">1950s 507XX Big E</span>
+            </p>
+        </section>
+        <div class="product-heading-group">
+            <h1 class="brand">Grateful Dead</h1>
+            <h1 id="name">Fall Tour 1994 Tee</h1>
+        </div>
+        <section id="product" class="container">
+            <img src="images/product4.png" id="main-product" class="img-thumbnail img-thumbnail-red" alt="Grateful Dead Tee">
+            <section id="product-info"> 
+                <h3 class="product-brand">Vintage Levi's /h2>
+                <h3 class="product-name">1950s 507XX Big E</h2>
+                <p class="product-description">Follow the Golden Brick Road. Original rock tee.</p>
+                <p class="product-variable"><span class="product-variable--name">Colour</span><span class="product-variable--data">Blue</span></p>
+                <p class="product-variable"><span class="product-variable--name">Size</span><span class="product-variable--data">M-L</span></p>
+                <p class="product-variable"><span class="product-variable--name">Condition</span><span class="product-variable--data">Some damage</span></p>
+                <button id="add-to-bag-btn" class="btn btn-primary btn-split" data-id="1">
+                    <span>Add to bag</span> <span id="btn-price">$4500</span>  
+                </button>
+            </section>
+        </section>
+        
+    </div>
+    
+    <aside id="product-sidebar" class="desktop-only">
+        <div id="product-sidebar--content">
+            <h2>Like this item?</h2>
+            <p>You may be interested in...</p>
+            <a href="product2.html" class="product-card">
                 <div class="card-content">
-                    <img src="images/product3.png" class="img-thumbnail img-thumbnail-red" alt="Grateful Dead Tee">
-                    <div class="product-details"><h3>Vintage Levi's</h3><p>$1295</p></div>
+                    <img src="images/product3.png" class="img-thumbnail img-thumbnail-red" alt="Levi's 1960s Type 3 70505 Big E">
+                    <div class="product-details"><h3>Vintage Levi's </h3><p>$1295</p></div>
                     <p class="product-name">1960s Type 3 70505 Big E</p>
                 </div>
             </a>
-            <a href="product4.html" class="product-card">
-                <div class="card-content">
-                    <img src="images/product4.png" class="img-thumbnail img-thumbnail-red" alt="Grateful Dead Tee">
-                    <div class="product-details"><h3>Vintage Levi's</h3><p>$4500</p></div>
-                    <p class="product-name">1950s 507XX Big E</p>
-                </div>
-            </a>
-    </section>
+        </div>
+    </aside>
+
 </main>
 <footer>
     <div class ="checkerboard"></div>
