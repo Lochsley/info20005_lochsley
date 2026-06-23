@@ -125,6 +125,16 @@ function updateCartUI() {
 
 // PRODUCT ID FUNCTION
 function addToCart(productId) {
+
+// Check if product is already in cart; if so, block adding again (and alert user)    
+    const alreadyInCart = cart.some(item => item.id === productId);
+
+    if (alreadyInCart) {
+        alert("This unique vintage piece is already in your bag!");
+        return
+    }
+
+// Add item to cart
     const productToAdd = products.find(item => item.id === productId);
 
     if (productToAdd) {
