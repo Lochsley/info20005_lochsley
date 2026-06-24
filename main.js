@@ -31,6 +31,14 @@ if (desktopClothingBtn && desktopDropdownMenu) {
     });
 }
 
+// Close dropdown menu if pressing anywhere else
+document.addEventListener('click', (event) => {
+        if (!desktopClothingBtn.contains(event.target) && !desktopDropdownMenu.contains(event.target)) {
+            desktopDropdownMenu.classList.add('hidden');
+        }
+    });
+}
+
 // CART OVERLAY ('Your Bag')
     const bagBtn = document.getElementById('bag-btn');
     const cartOverlay = document.getElementById('cart-overlay');

@@ -647,6 +647,14 @@ img {
     font-weight: 600;
 }
 
+/* HOVER STATES (quick fix) */
+
+.btn:hover, .product-card:hover, .bento-card:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+    transition: all 0.2s ease;
+}
+
 /* PRE-FOOTER (map, hours, contact)*/
 
 .pre-footer-grid {
