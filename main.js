@@ -25,15 +25,15 @@ const desktopClothingBtn = document.getElementById('desktop-clothing-btn');
 const desktopDropdownMenu = document.getElementById('desktop-dropdown-menu');
 
 if (desktopClothingBtn && desktopDropdownMenu) {
+    
     desktopClothingBtn.addEventListener('click', (e) => {
         e.preventDefault(); 
+        e.stopPropagation(); /
         desktopDropdownMenu.classList.toggle('hidden');
     });
-}
 
-// Close dropdown menu if pressing anywhere else
-document.addEventListener('click', (event) => {
-        if (!desktopClothingBtn.contains(event.target) && !desktopDropdownMenu.contains(event.target)) {
+    document.addEventListener('click', (e) => {
+        if (!desktopDropdownMenu.contains(e.target)) {
             desktopDropdownMenu.classList.add('hidden');
         }
     });
